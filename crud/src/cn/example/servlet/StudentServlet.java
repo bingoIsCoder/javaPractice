@@ -27,7 +27,7 @@ public class StudentServlet extends HttpServlet {
 		List<Student> stus = sti.findAll();
 		req.setAttribute("stus", stus);
 		
-		req.getRequestDispatcher("/list.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/student/list.jsp").forward(req, resp);
 	}
 
 }

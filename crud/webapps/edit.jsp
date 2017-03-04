@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/student/save" method="post">
+	<form action="${pageContext.request.contextPath}/save" method="post">
 		姓名：<input type="text" name="name"><br/>
 		年纪：<input type="text" name="age"><br/>
 		<input type="submit" value="确定">

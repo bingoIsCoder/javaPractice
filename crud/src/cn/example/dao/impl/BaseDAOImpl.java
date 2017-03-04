@@ -77,7 +77,7 @@ public class BaseDAOImpl<T> {
 		try {
 			obj = clz.newInstance();
 			BeanInfo beanInfo = Introspector.getBeanInfo(clz, Object.class);
-			PropertyDescriptor[] pd = beanInfo.getPropertyDescriptors();
+			PropertyDescriptor[] pd = beanInfo.getPropertyDescriptors();			
 			for (PropertyDescriptor propertyDescriptor : pd) {
 				Method method = propertyDescriptor.getWriteMethod();
 				method.invoke(obj, rs.getObject(propertyDescriptor.getName()));

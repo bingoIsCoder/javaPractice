@@ -34,7 +34,7 @@ public class SaveServlet extends HttpServlet{
 		IStudentDAO sti = new StudentDAOImpl();
 		sti.save(stu);
 		
-		req.getRequestDispatcher("/list").forward(req, resp);
+		resp.sendRedirect(req.getContextPath() + "/list");
 	}
 
 }

@@ -24,7 +24,7 @@ public class DeleteServlet extends HttpServlet{
 		IStudentDAO sti = new StudentDAOImpl();
 		sti.delete(Long.parseLong(req.getParameter("id")));
 		
-		req.getRequestDispatcher("/list").forward(req, resp);
+		resp.sendRedirect(req.getContextPath() + "/list");
 	}
 
 }
