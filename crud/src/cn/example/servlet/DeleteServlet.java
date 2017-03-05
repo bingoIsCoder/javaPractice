@@ -15,14 +15,15 @@ import cn.example.dao.impl.StudentDAOImpl;
 public class DeleteServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
+	IStudentDAO dao = new StudentDAOImpl();
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		
-		IStudentDAO sti = new StudentDAOImpl();
-		sti.delete(Long.parseLong(req.getParameter("id")));
+		dao.delete(Long.parseLong(req.getParameter("id")));
 		
 		resp.sendRedirect(req.getContextPath() + "/list");
 	}

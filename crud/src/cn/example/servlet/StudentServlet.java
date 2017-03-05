@@ -17,14 +17,15 @@ import cn.example.domain.Student;
 public class StudentServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	IStudentDAO dao = new StudentDAOImpl();
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
-		resp.setCharacterEncoding("UTF-8");
-		
-		IStudentDAO sti = new StudentDAOImpl();
-		List<Student> stus = sti.findAll();
+		resp.setCharacterEncoding("UTF-8");	
+
+		List<Student> stus = dao.findAll();
 		req.setAttribute("stus", stus);
 		
 		req.getRequestDispatcher("/WEB-INF/student/list.jsp").forward(req, resp);

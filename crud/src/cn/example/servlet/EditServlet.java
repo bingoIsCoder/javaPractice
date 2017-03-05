@@ -15,15 +15,19 @@ import cn.example.dao.IStudentDAO;
 import cn.example.dao.impl.StudentDAOImpl;
 import cn.example.domain.Student;
 
-@WebServlet("/save")
-public class SaveServlet extends HttpServlet{
+@WebServlet("/edit")
+public class EditServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
+	IStudentDAO dao = new StudentDAOImpl();
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
+		String id = req.getParameter("id");
+		
 		Student stu = new Student();
 		Map<String, String[]> map = req.getParameterMap();
 		try {
@@ -31,8 +35,12 @@ public class SaveServlet extends HttpServlet{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		IStudentDAO sti = new StudentDAOImpl();
-		sti.save(stu);
+		//System.out.println(stu);
+		if (id != null && !"".equals(id))
+			dao.update(stu);
+		else {
+			dao.save(stu);
+		}
 		
 		resp.sendRedirect(req.getContextPath() + "/list");
 	}

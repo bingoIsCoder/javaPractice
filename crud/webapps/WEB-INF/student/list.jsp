@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="${pageContext.request.contextPath}/edit.jsp">添加</a>
+	<a href="${pageContext.request.contextPath}/input">添加</a>
 	<table border="1" cellspacing="0" width="400">
 		<tr align="center">
 			<th>id</th>
@@ -21,7 +21,7 @@
 				<td>${stu.id}</td>
 				<td>${stu.name}</td>
 				<td>${stu.age}</td>
-				<td><a href="">修改</a>/<a href="${pageContext.request.contextPath}/delete?id=${stu.id}">删除</a></td>
+				<td><a href="${pageContext.request.contextPath}/input?id=${stu.id}">修改</a>/<a href="${pageContext.request.contextPath}/delete?id=${stu.id}">删除</a></td>
 			</tr>
 		</c:forEach>
 	</table>

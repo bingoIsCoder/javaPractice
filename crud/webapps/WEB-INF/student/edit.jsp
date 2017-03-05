@@ -8,9 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/save" method="post">
-		姓名：<input type="text" name="name"><br/>
-		年纪：<input type="text" name="age"><br/>
+	<form action="${pageContext.request.contextPath}/edit" method="post">
+		<input type="hidden" name="id" value="${stu.id}">
+		姓名：<input type="text" name="name" value="${stu.name}"><br/>
+		年纪：<input type="text" name="age" value="${stu.age}"><br/>
 		<input type="submit" value="确定">
 	</form>
 </body>
