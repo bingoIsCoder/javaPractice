@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	欢迎您： ${USER_IN_SENSSION.name}<br>
 	<a href="${pageContext.request.contextPath}/input">添加</a>
 	<table border="1" cellspacing="0" width="400">
 		<tr align="center">
