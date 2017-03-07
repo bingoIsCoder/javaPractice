@@ -8,11 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.omg.PortableServer.ID_ASSIGNMENT_POLICY_ID;
-
 import cn.example.dao.IStudentDAO;
 import cn.example.dao.impl.StudentDAOImpl;
 import cn.example.domain.Student;
+import cn.example.util.Global;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet{
@@ -24,7 +23,7 @@ public class LoginServlet extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
-		resp.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");		
 		
 		String name =req.getParameter("name");
 		String password = req.getParameter("password");
@@ -35,8 +34,8 @@ public class LoginServlet extends HttpServlet{
 			req.getRequestDispatcher("/login.jsp").forward(req, resp);
 			return;
 		}
-		req.getSession().setAttribute("USER_IN_SENSSION", stu);
-		resp.sendRedirect(req.getContextPath() + "/list");
+		req.getSession().setAttribute(Global.USER_IN_SENSSION, stu);
+		resp.sendRedirect(req.getContextPath() + "/student?cmd=list");
 	}
 
 }

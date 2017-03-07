@@ -8,8 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	欢迎您： ${USER_IN_SENSSION.name}<br>
-	<a href="${pageContext.request.contextPath}/input">添加</a>
+	欢迎您： ${USER_IN_SENSSION.name}&nbsp;&nbsp;<a href="/logout">注销</a>
+	<br>
+	<a href="${pageContext.request.contextPath}/student?cmd=input">添加</a>
 	<table border="1" cellspacing="0" width="400">
 		<tr align="center">
 			<th>id</th>
@@ -22,7 +23,7 @@
 				<td>${stu.id}</td>
 				<td>${stu.name}</td>
 				<td>${stu.age}</td>
-				<td><a href="${pageContext.request.contextPath}/input?id=${stu.id}">修改</a>/<a href="${pageContext.request.contextPath}/delete?id=${stu.id}">删除</a></td>
+				<td><a href="${pageContext.request.contextPath}/student?cmd=input&id=${stu.id}">修改</a>/<a href="${pageContext.request.contextPath}/student?cmd=delete&id=${stu.id}">删除</a></td>
 			</tr>
 		</c:forEach>
 	</table>
