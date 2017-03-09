@@ -71,7 +71,7 @@ public class ShoppingCartServlet extends HttpServlet {
 			break;
 		}
 		buyCart.addItem(newItem);
-		resp.sendRedirect("/shoppingCart.jsp");
+		resp.sendRedirect("/buycart/shoppingCart.jsp");
 	}
 	
 	public void delete(HttpServletRequest req, HttpServletResponse resp)
@@ -80,6 +80,6 @@ public class ShoppingCartServlet extends HttpServlet {
 		BuyCart buyCart = (BuyCart)req.getSession().getAttribute("BUYCART_IN_SESSION");
 		if (buyCart != null)
 			buyCart.deleteItem(id);
-		resp.sendRedirect("/shoppingCart.jsp");
+		resp.sendRedirect("/buycart/shoppingCart.jsp");
 	}
 }

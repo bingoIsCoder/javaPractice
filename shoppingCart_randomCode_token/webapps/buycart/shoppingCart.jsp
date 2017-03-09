@@ -36,6 +36,6 @@
 			</c:when>
 		</c:choose>
 	</table>
-	<a href="/buySomething.jsp">继续买买买...</a>
+	<a href="/buycart/buySomething.jsp">继续买买买...</a>
 </body>
 </html>
