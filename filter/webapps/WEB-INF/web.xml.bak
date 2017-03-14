@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="false">
+  	<display-name>filter</display-name>
+  	
+  	<filter>
+  		<filter-name>hello</filter-name>
+  		<filter-class>cn.example.filter.HelloFilter</filter-class>
+  		<init-param>
+  			<param-name>name</param-name>
+  			<param-value>njt467</param-value>  			
+  		</init-param>
+  		<init-param>
+  			<param-name>email</param-name>
+  			<param-value>bin.tian@motorolasolutions.com</param-value>
+  		</init-param>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>hello</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+  	
+  	<filter>
+  		<filter-name>hello01</filter-name>
+  		<filter-class>cn.example.filter.HelloFilter01</filter-class>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>hello01</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+  	
+  	<filter>
+  		<filter-name>hello02</filter-name>
+  		<filter-class>cn.example.filter.HelloFilter02</filter-class>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>hello02</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+  	
+  	<filter>
+  		<filter-name>hello03</filter-name>
+  		<filter-class>cn.example.filter.HelloFilter03</filter-class>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>hello03</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+
+</web-app>
