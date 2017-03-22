@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.example.domain.ProductMapper">
+		
+	<select id="queryPage" parameterType="cn.example.query.ProductQuery" resultType="product">
+		select * from product
+		<include refid="whereSql"/>
+		limit #{beginIndex}, #{pageSize}
+	</select>
+	
+	<select id="queryAll"  parameterType="cn.example.query.ProductQuery" resultType="product">
+		select * from product 
+	</select>
+	
+	<select id="getCount" parameterType="cn.example.query.ProductQuery" resultType="int">
+		select count(*) from product
+		<include refid="whereSql"/>		
+	</select>
+	
+	<sql id="whereSql">
+		<where>
+			<if test="name!=null">
+				and productName like concat('%', #{name}, '%')
+			</if>
+			<if test="minPrice!=null">
+				<![CDATA[
+					and salePrice >= #{minPrice}
+				]]>
+			</if>
+			<if test="maxPrice!=null">
+				<![CDATA[
+					and salePrice <= #{maxPrice}
+				]]>
+			</if>
+		</where>
+	</sql>
+	
+</mapper>
