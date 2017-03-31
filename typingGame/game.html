@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Typing Game</title>
+<style type="text/css">
+	.block {
+		width: 40px;
+		height: 40px;
+		background-color: red;
+		position: absolute;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+		line-height: 40px;
+		top: 0px;
+		left: 0px;
+	}
+	.scoreboard {
+		width: 80px;
+		height: 80px;
+		background-color: blue;
+		position: absolute;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+		line-height: 80px;
+		top: 0px;
+		right: 0px;
+		font-size: 40px;
+	}
+	.plusScore {
+		width: 80px;
+		height: 80px;
+		position:absolute;  
+ 		left:50%;  
+    	top:50%;  
+    	margin:-40px 0 0 -40px;		
+		font-size: 40px;
+		text-align: center;
+		line-height: 80px;
+		color: green;
+	}
+</style>
+<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<button id="begin" onclick="on_begin()">开始游戏</button>
+	<button id="pause" onclick="on_pause()"> 暂停</button>
+	<div class="scoreboard" id="scoreboard">0</div>
+	<div class="plusScore" id="plusScore"></div>
+</body>
+</html>
